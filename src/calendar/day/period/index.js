@@ -12,7 +12,7 @@ import styleConstructor from './style';
 
 class Day extends Component {
   static displayName = 'IGNORE';
-  
+
   static propTypes = {
     // TODO: selected + disabled props should be removed
     state: PropTypes.oneOf(['selected', 'disabled', 'today', '']),
@@ -196,7 +196,8 @@ class Day extends Component {
       <TouchableWithoutFeedback
         testID={this.props.testID}
         onPress={this.onDayPress}
-        onLongPress={this.onDayLongPress}>
+        onLongPress={this.onDayLongPress}
+        disabled={this.props.marking.disableTouchEvent}>
         <View style={this.style.wrapper}>
           {fillers}
           <View style={containerStyle}>
